@@ -1,25 +1,29 @@
-AryAttack := Array("1","2","w","r")
-AryInstant := Array("3","4")
+AryAttack := Array("3","z","w","z","r")
+; AryAttack := Array("3","2","z","w","3","z","r","1")
+AryInstant := Array("1","2")
 
 act(a){
     ; OutputDebug, % a
     Send, {%a% Down}
-    Sleep, 250
+    Sleep, 200
     Send, {%a% up}
     
     ; Send, %a%
+    ; Sleep,  200
+    ; Send, %a%
+    
 }
 
 attak(Ary){
     For k, v in Ary
         act(v)
-        Sleep, 200
+        Sleep, 800
 }
 
 buff(Ary){
     For k, v in Ary
         act(v)
-        Sleep, 50
+        Sleep, 200
 }
 
 keyUP(Ary){
@@ -38,7 +42,7 @@ Loop{
 }
 
 
-z:: 
+g:: 
     Sleep, 50
     keyUp(AryInstant)
     keyUp(AryAttack)
@@ -47,6 +51,9 @@ z::
 
 t::
     Pause, Off
+
+; ^F12::
+;     Suspend, On
 
 ; a:: 
 ;     keyUp(AryInstant)
